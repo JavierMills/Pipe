@@ -1,1 +1,34 @@
-<p>ordenar works!</p>
+<div class="text-layout">
+  <h1>Pipes personalizados</h1>
+  <p>Pipes creados por {{'nosotros'| mayusculas:mayusculas  }}</p>
+
+  <span (click)="cambiarVariable()" class="colors-botton">Cambiar Variable</span>&nbsp;&nbsp;
+
+</div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-5">
+    <div class="btn-group mt-5">
+        <button style="border-radius: 10px;" class="btn btn-mayusculas" aria-current="page"> Mayusculas</button>&nbsp;&nbsp;
+        <button style="border-radius: 10px;" class="btn btn-porNombre" (click)="cambiarOrden('nombre')">Por nombre</button>&nbsp;&nbsp;
+        <button style="border-radius: 10px;" class="btn btn-valores" (click)="cambiarOrden('vuela')">Vuela</button>&nbsp;&nbsp;
+        <button style="border-radius: 10px;" class="btn btn-color" (click)="cambiarOrden('color')">Color</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+      </div>
+  </nav>
+  <table class="table table-dark table-striped mt-2">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Vuela</th>
+        <th scope="col">Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let heroe of heroes | ordenar:ordenarPor">
+        <td>{{heroe.nombre}}</td>
+        <td>{{heroe.vuela | vuela | titlecase}}</td>
+        <td>{{heroe.color}}</td>
+      </tr>
+    </tbody>
+  <!-- </table> -->

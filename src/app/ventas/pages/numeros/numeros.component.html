@@ -1,1 +1,32 @@
-<p>numeros works!</p>
+<div class="text-layout">
+    <h1>Pipes Numericos</h1>
+    <p>Pipes Incuidos en Common Module</p>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card" style="width: 25rem;">
+          <h5 class="card-title">Ventas</h5>
+          <div class="card-body mb-5">
+            <p class="card-text">${{(ventas + 1000000) | number:'1.6-6'}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="width: 25rem;">
+          <h5 class="card-title">Ventas Brutas</h5>
+          <div class="card-body mb-5">
+            <p class="card-text">{{(ventas + 2000000)  | currency :'USD':'symbol-narrow' :'1.4-4'}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="width: 25rem;">
+          <h5 class="card-title">Porcentaje de Ganacias</h5>
+          <div class="card-body mb-5">
+            <p class="card-text">{{porcentaje | percent:'2.2-2' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

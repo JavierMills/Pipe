@@ -5,11 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './basicos.component.html',
   styleUrls: ['./basicos.component.css']
 })
-export class BasicosComponent implements OnInit {
+export class BasicosComponent   {
 
-  constructor() { }
+   nombreLower : string = "ramiro javier";
+   nombreUpper : string = "RAMIRO JAVIER";
+   nombreCompleto : string = "RaMiRo JaViEr";
 
-  ngOnInit(): void {
-  }
+   fecha : Date = new Date();
+
+   
 
 }

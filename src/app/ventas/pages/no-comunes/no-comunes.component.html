@@ -1,1 +1,127 @@
-<p>no-comunes works!</p>
+<div class="text-layout">
+  <h1>Pipes No tan comunes</h1>
+  <p>Pipes Incuidos en Common Module</p>
+</div>
+
+<div class="row">
+    <div class="accordion accordion-flush col-sm-6" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" 
+            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" 
+            aria-expanded="false" aria-controls="flush-collapseOne">
+              i18Select Pipe
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" 
+          aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <p>
+              Saludos {{nombre}} es un honor {{ genero | i18nSelect : invitacionMap}}
+                </p> 
+                <span (click)="cambiarGenero()" class="colors-botton">Cambiar Persona</span>
+                </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <div class="accordion accordion-flush col-sm-6" id="accordionFlushExample2">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              i18Plural Pipe
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                  <p>
+                  Actualmente {{clientes.length | i18nPlural:clientesMap}}  
+                  </p>
+
+                  <span (click)="cambiarCliente()" class="colors-botton">Cambiar Cliente</span>&nbsp;&nbsp;
+                  <span (click)="agregarCliente()" class="colors-botton">Agregar Cliente</span>
+                       
+                </div>
+            </div>
+          </div>
+      </div>  
+
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="accordion accordion-flush col-sm-6" id="accordionFlushExample3">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTree" aria-expanded="false" aria-controls="flush-collapseTree">
+              Slice Pipe
+              </button>
+            </h2>
+            <div id="flush-collapseTree" class="accordion-collapse collapse" aria-labelledby="flush-headingTree" data-bs-parent="#accordionFlushExample3">
+              <div class="accordion-body">
+                         <b>Original</b>
+                         <pre>{{clientes}}</pre>
+
+                         <b>Slice</b>
+                         <!-- excluye la posocion 2, va de 0 a 2-->
+                         <pre>{{clientes | slice :0:2}}</pre>
+                         <b>Slice</b>
+                         <pre>{{clientes | slice :1:2}}</pre>
+                </div>
+            </div>
+          </div>
+      </div>  
+      <div class="accordion accordion-flush col-sm-6" id="accordionFlushExample4">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+              KeyValue Pipe
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4">
+              <div class="accordion-body">
+                    <ul>
+                      <li *ngFor="let item of persona | keyvalue">
+                          {{ item.key | titlecase}}: {{item.value }}
+                      </li>
+                    </ul>   
+                </div>
+            </div>
+          </div>
+      </div>  
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="accordion accordion-flush col-sm-6" id="accordionFlushExample5">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+          Json Pipe
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5">
+          <div class="accordion-body">
+              {{heroes| json}}  
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="accordion accordion-flush col-sm-6" id="accordionFlushExample6">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+          Async Pipe
+          </button>
+        </h2>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample6">
+          <div class="accordion-body">
+              <!-- {{ randomNumbers| async }}   -->
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
